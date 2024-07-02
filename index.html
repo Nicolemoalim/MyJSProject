@@ -1,46 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./styles.css" rel="stylesheet">
+  <title>Document</title>
+
+
 </head>
+
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact List</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1> Phone Book</h1>
-        </div>
-    </header>
+  <p id="test" class="highlight"> this is a sample paragraph </p>
+  <input type="text" id="classinput" placeholder="enter class name">
+  <button onclick="addClass()">Add Class </button>
 
-    <main>
-        <div class="container">
-            <h2>Contact List</h2>
-            <ul class="contact-list">
-                <li>Name: Luna Moalim | Email: luna.moalim@gmail.com | Phone: 054638294 | City: Newyork </li>
-                <li>Name: Nicole Moalim| Email: nicole.moalim@outlook.com | Phone: 052986123| City: New york</li>
-                <li>Name: Steve johnson | Email: steve.johnson@gmail.com | Phone: 054789456 | City : new york</li>
-                
-            </ul>
-        </div>
-    </main>
+  <section id="container">
+    <p id="paragraph1">This is paragraph 1.</p>
+    <button id="button1" onclick="toggleParagraph('paragraph1')">Show/Hide</button>
 
-    <footer>
-        <div class="container">
-            <p>&copy;  My Contact List. <br>  All rights reserved. 2024 <br/> </p>
-        </div>
-    </footer>
+    <p id="paragraph2">This is paragraph 2.</p>
+    <button id="button2" onclick="toggleParagraph('paragraph2')">Show/Hide</button>
+
+    <p id="paragraph3">This is paragraph 3.</p>
+    <button id="button3" onclick="toggleParagraph('paragraph3')">Show/Hide</button>
+
+    <section id="container">
+      <button id="button1">Click me</button>
+    </section>
+  </section>
+
+  <script>
+    function toggleParagraph(paragraphId) {
+      let paragraph = document.getElementById(paragraphId);
+      let button = document.getElementById(`button${paragraphId.replace('paragraph', '')}`);
+      if (paragraph.style.display === 'none') {
+        paragraph.style.display = 'block';
+        button.textContent = 'Hide';
+      } else {
+        paragraph.style.display = 'none';
+        button.textContent = 'Show';
+      }
+    }
+    let button = document.getElementById('button1');
+    button.addEventListener('click', function () {
+      button.textContent = 'Clicked!';
+      button.classList.add('unclickable');
+    });
+
+    function addClass() {
+      let className = document.getElementById('classInput').value;
+      let textElement = document.getElementById('text');
+      textElement.classList.add(className);
+    }
+  </script>
+
+
 </body>
-</html>
 
-</body>
 </html>
